@@ -31,7 +31,7 @@ for(let i = 0; i < nomes.length; i++) {
 }
 
 //Funções, Strings e Math
-
+/*
 function converterHorario(horario24) {
 
     //14:20 => hora = 14, minuto = 20 => split
@@ -58,4 +58,4 @@ console.log(`${hora12}:${minuto} ${periodo}`)
 converterHorario("15:16");
 converterHorario("09:45");
 converterHorario("21:16");
-
+*/
