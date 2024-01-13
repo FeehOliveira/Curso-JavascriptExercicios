@@ -67,3 +67,63 @@ const novoElemento = document.createElement("div");
 console.log(novoElemento);
 
 novoElemento.textContent = "Minha div JS";
+
+document.body.appendChild(novoElemento);
+
+//Eventos
+
+const botao = document.querySelector("button");
+
+botao.addEventListener("click", function (){
+    console.log("Botao funcionando!")
+})
+
+//Mouse
+
+const elemento5 = document.querySelector("#meuFormulario")
+
+elemento5.addEventListener("mouseover", function(){
+    console.log("o mouse passou aqui.")
+})
+
+//Teclado
+
+const campoInput = document.querySelector("meuInput");
+
+campoInput.addEventListener("keydown", function() {
+    console.log("Tecla pressionada.")
+});
+
+//formulario
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function() {
+    console.log("Enviado")
+});
+
+//Propagação de eventos
+
+document.querySelector("#elementoPai").addEventListener("click", function(){
+    console.log("Click Capturado.")
+});
+
+document.querySelector("#elementoFilho").addEventListener("click", function(event) {
+    
+    //event.stopPropagation();
+    console.log("Elemento Filho")
+});
+
+document.querySelector("#meuLink").addEventListener("click", function(event) {
+    event.preventDefault();
+
+    console.log("Clicou no link")
+});
+
+//Delegação de eventos
+
+document.querySelector("#elementoPai").addEventListener("click", function() {
+    if(event.target.matches(".classeDosFilhos")) {
+        console.log("evento propagado")
+    }
+});
